@@ -25,8 +25,7 @@ fun AppNavGraph(navHostController: NavHostController, isUserLogedIn:Boolean) {
         composable(NavigationRoute.LOGIN) {
             if (isUserLogedIn) {
                 FadeInAnimation {
-                    //DashBoardScreen()
-                    MessageScreen()
+                    DashBoardScreen()
                 }
             } else {
                 FadeInAnimation {

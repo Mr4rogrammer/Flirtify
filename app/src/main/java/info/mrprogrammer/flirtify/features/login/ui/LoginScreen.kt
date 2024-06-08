@@ -73,26 +73,31 @@ fun LoginScreen(viewModel: LoginViewModel = hiltViewModel()) {
         contract = ActivityResultContracts.StartActivityForResult()
     ) { result ->
         val task = GoogleSignIn.getSignedInAccountFromIntent(result.data)
-        val account = task.result
-        val credential = GoogleAuthProvider.getCredential(account.idToken, null)
-        auth.signInWithCredential(credential)
-            .addOnCompleteListener { signInTask ->
-                if (signInTask.isSuccessful) {
-                    val user = auth.currentUser
-                    val valueMap = hashMapOf<String, Any?>(
-                        "name" to user?.displayName.toString(),
-                        "email" to user?.email.toString(),
-                        "photo" to user?.photoUrl.toString()
-                    )
-                    val saveDaModel = SaveDataModel("")
-                    saveDaModel.key = "User"
-                    saveDaModel.value = valueMap
-                    viewModel.saveUser(saveDaModel)
-                } else {
-                    viewModel.loginFailed()
-                    Toast.makeText(context, "Login Failed", Toast.LENGTH_SHORT).show()
+        try {
+            val account = task.result
+            val credential = GoogleAuthProvider.getCredential(account.idToken, null)
+            auth.signInWithCredential(credential)
+                .addOnCompleteListener { signInTask ->
+                    if (signInTask.isSuccessful) {
+                        val user = auth.currentUser
+                        val valueMap = hashMapOf<String, Any?>(
+                            "name" to user?.displayName.toString(),
+                            "email" to user?.email.toString(),
+                            "photo" to user?.photoUrl.toString()
+                        )
+                        val saveDaModel = SaveDataModel("")
+                        saveDaModel.key = "User"
+                        saveDaModel.value = valueMap
+                        viewModel.saveUser(saveDaModel)
+                    } else {
+                        viewModel.loginFailed()
+                        Toast.makeText(context, "Login Failed", Toast.LENGTH_SHORT).show()
+                    }
                 }
-            }
+        } catch (e: Exception) {
+            viewModel.loginFailed()
+            Toast.makeText(context, "Login Failed", Toast.LENGTH_SHORT).show()
+        }
     }
 
     Box(modifier = Modifier.fillMaxSize()) {
