@@ -9,6 +9,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.core.view.WindowCompat
 import androidx.navigation.compose.rememberNavController
+import com.google.firebase.auth.FirebaseAuth
 import dagger.hilt.android.AndroidEntryPoint
 import info.mrprogrammer.flirtify.common.navigation.AppNavGraph
 import info.mrprogrammer.flirtify.common.navigation.NavManager
@@ -35,8 +36,10 @@ class MainActivity : ComponentActivity() {
 
     @Composable
     fun SetAppNavGraph() {
+        val isUserLogedIn = FirebaseAuth.getInstance().currentUser != null
+
         val navHostController = rememberNavController()
-        AppNavGraph(navHostController = navHostController)
+        AppNavGraph(navHostController = navHostController, isUserLogedIn)
 
         val navInfo by navigationManager.routeInfo.collectAsState()
         LaunchedEffect(key1 = navInfo) {

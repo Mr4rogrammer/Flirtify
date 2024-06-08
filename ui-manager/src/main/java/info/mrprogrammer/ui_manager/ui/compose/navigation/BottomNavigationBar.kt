@@ -28,7 +28,9 @@ fun BottomNavigationBar(
     onClick: (BottomNavigationBarDataModel) -> Unit
 ) {
     fun handleOnClick(event: BottomNavigationBarDataModel) {
-        onClick(event)
+        if (currentSelected !=  event.id) {
+            onClick(event)
+        }
     }
     Surface(modifier = modifier
         .fillMaxWidth()

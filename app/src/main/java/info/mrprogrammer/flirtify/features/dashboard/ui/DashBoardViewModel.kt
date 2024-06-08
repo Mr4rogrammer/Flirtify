@@ -1,10 +1,11 @@
 package info.mrprogrammer.flirtify.features.dashboard.ui
 
-import androidx.compose.runtime.mutableStateListOf
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
+import info.mrprogrammer.flirtify.R
 import info.mrprogrammer.flirtify.common.navigation.NavManager
-import info.mrprogrammer.ui_manager.R
+import info.mrprogrammer.flirtify.core.utils.getRandomGirlName
+import info.mrprogrammer.flirtify.core.utils.getRandomUrlGirlImage
 import info.mrprogrammer.ui_manager.ui.compose.post_card.model.PostData
 import info.mrprogrammer.ui_manager.ui.compose.post_card.model.TagData
 import info.mrprogrammer.ui_manager.ui.compose.post_card.model.UserData
@@ -37,8 +38,8 @@ class DashBoardViewModel @Inject constructor(
         for (i in 1..15) {
             data.add(
                 StoryListDataModel(
-                    title = "Krisha",
-                    imageUrl = "https://i.pinimg.com/564x/b5/00/20/b500200c66f40c45fb35be6353279946.jpg"
+                    title = getRandomGirlName(),
+                    imageUrl = getRandomUrlGirlImage()
                 )
             )
         }
@@ -47,7 +48,7 @@ class DashBoardViewModel @Inject constructor(
             0,
             StoryListDataModel(
                 title = "My Story",
-                imageUrl = "https://i.pinimg.com/564x/ed/1f/90/ed1f90acffc0efa120b29ff4bc0bbabb.jpg",
+                imageUrl = "https://instagram.fmaa2-4.fna.fbcdn.net/v/t51.2885-19/439900491_657834589820368_6188193405571672090_n.jpg?stp=dst-jpg_s150x150&_nc_ht=instagram.fmaa2-4.fna.fbcdn.net&_nc_cat=104&_nc_ohc=nNB02i6VgX8Q7kNvgGARxmS&edm=AEhyXUkBAAAA&ccb=7-5&oh=00_AYAnuEMpYDvDzsn2JzYCr3wUtuee03-WMvODjeRfqyulfg&oe=666A2974&_nc_sid=cf751b",
                 isCurrentUser = true
             )
         )
@@ -61,11 +62,11 @@ class DashBoardViewModel @Inject constructor(
                 postImageUrl = "https://i.pinimg.com/736x/c2/6d/91/c26d912eb43a85ca51ecb81804f36dc4.jpg",
                 tagData = TagData(
                     "Nature",
-                    R.drawable.add_story
+                    R.drawable.tree
                 ),
                 content = "If you could live anywhere in the world, where would you pick?",
                 userData = UserData(
-                    userImageUrl = "https://i.pinimg.com/564x/02/76/fe/0276fe22403e84aff0708a08fcccf76f.jpg",
+                    userImageUrl = "https://instagram.fmaa2-4.fna.fbcdn.net/v/t51.2885-19/439900491_657834589820368_6188193405571672090_n.jpg?stp=dst-jpg_s150x150&_nc_ht=instagram.fmaa2-4.fna.fbcdn.net&_nc_cat=104&_nc_ohc=nNB02i6VgX8Q7kNvgGARxmS&edm=AEhyXUkBAAAA&ccb=7-5&oh=00_AYAnuEMpYDvDzsn2JzYCr3wUtuee03-WMvODjeRfqyulfg&oe=666A2974&_nc_sid=cf751b",
                     userName = "Krishna", userStatusText = "Mr.Programmer"
                 ),
                 reactIcon = info.mrprogrammer.flirtify.R.drawable.like

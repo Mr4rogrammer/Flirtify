@@ -1,6 +1,8 @@
 package info.mrprogrammer.ui_manager.ui.compose.tag
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.padding
@@ -16,16 +18,44 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import info.mrprogrammer.ui_manager.ui.theme.buttonColor
 import info.mrprogrammer.ui_manager.ui.theme.whiteWithTransparency
 
 @Composable
-fun Tag(icon: Int, title: String, modifier: Modifier = Modifier) {
-
-    Surface(shape = RoundedCornerShape(20.dp), color = whiteWithTransparency, modifier = modifier) {
-        Row(modifier = Modifier.padding(6.dp), verticalAlignment = Alignment.CenterVertically) {
-            Image(painter = painterResource(id = icon), contentDescription = "", modifier = Modifier.width(20.dp))
+fun Tag(
+    icon: Int? = null,
+    title: String,
+    modifier: Modifier = Modifier,
+    textColor: Color = Color.White,
+    isSelected: Boolean? = null,
+    onClick: ((String) -> Unit)? = null
+) {
+    Surface(
+        shape = RoundedCornerShape(20.dp),
+        color = MaterialTheme.colorScheme.secondary.takeIf { isSelected == true} ?: whiteWithTransparency,
+        modifier = modifier.padding(end = 5.dp, start = 5.dp).border(
+            width = 0.5.dp,
+            color = MaterialTheme.colorScheme.primary,
+            shape = RoundedCornerShape(20.dp)
+        ).clickable {
+            onClick?.let { onClick(title) }
+        }
+    ) {
+        Row(modifier = Modifier.padding(8.dp), verticalAlignment = Alignment.CenterVertically) {
+            if (icon != null) {
+                Image(
+                    painter = painterResource(id = icon),
+                    contentDescription = "",
+                    modifier = Modifier.width(20.dp)
+                )
+            }
             Spacer(modifier = Modifier.width(3.dp))
-            Text(text = title, color = Color.White, style = MaterialTheme.typography.titleMedium, fontSize = 13.sp)
+            Text(
+                text = title,
+                color = textColor,
+                style = MaterialTheme.typography.titleMedium,
+                fontSize = 13.sp
+            )
         }
     }
 }

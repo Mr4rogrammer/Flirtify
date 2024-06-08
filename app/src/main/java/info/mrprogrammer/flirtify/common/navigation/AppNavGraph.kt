@@ -1,21 +1,21 @@
 package info.mrprogrammer.flirtify.common.navigation
 
 import androidx.compose.runtime.Composable
-import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.google.firebase.auth.FirebaseAuth
 import info.mrprogrammer.flirtify.common.navigation.consts.NavigationRoute
 import info.mrprogrammer.flirtify.features.dashboard.ui.DashBoardScreen
+import info.mrprogrammer.flirtify.features.discovery.ui.DiscoveryScreen
 import info.mrprogrammer.flirtify.features.login.ui.LoginScreen
-import info.mrprogrammer.flirtify.features.login.ui.viewmodel.LoginViewModel
+import info.mrprogrammer.flirtify.features.matches.ui.MatcheScreen
+import info.mrprogrammer.flirtify.features.messages.ui.MessageScreen
 import info.mrprogrammer.flirtify.features.splash.SplashScreen
 import info.mrprogrammer.ui_manager.ui.animation.FadeInAnimation
 
 
 @Composable
-fun AppNavGraph(navHostController: NavHostController) {
+fun AppNavGraph(navHostController: NavHostController, isUserLogedIn:Boolean) {
 
     NavHost(navController = navHostController, startDestination = NavigationRoute.LOGIN) {
         composable(NavigationRoute.SPLASH) {
@@ -23,14 +23,14 @@ fun AppNavGraph(navHostController: NavHostController) {
         }
 
         composable(NavigationRoute.LOGIN) {
-            val isUserLogedIn = FirebaseAuth.getInstance().currentUser
-            if (isUserLogedIn == null) {
+            if (isUserLogedIn) {
                 FadeInAnimation {
-                    LoginScreen()
+                    //DashBoardScreen()
+                    MessageScreen()
                 }
             } else {
                 FadeInAnimation {
-                    DashBoardScreen()
+                    LoginScreen()
                 }
             }
 
@@ -38,14 +38,12 @@ fun AppNavGraph(navHostController: NavHostController) {
 
         composable(NavigationRoute.MATCHES) {
             FadeInAnimation {
-                LoginScreen()
+                MatcheScreen()
             }
         }
 
         composable(NavigationRoute.ADD) {
-            FadeInAnimation {
-                LoginScreen()
-            }
+
         }
 
         composable(NavigationRoute.DASHBOARD) {
@@ -56,13 +54,13 @@ fun AppNavGraph(navHostController: NavHostController) {
 
         composable(NavigationRoute.DISCOVERY) {
             FadeInAnimation {
-                LoginScreen()
+                DiscoveryScreen()
             }
         }
 
         composable(NavigationRoute.MESSAGE) {
             FadeInAnimation {
-                LoginScreen()
+                MessageScreen()
             }
         }
     }

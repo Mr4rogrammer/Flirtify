@@ -32,9 +32,9 @@ class NavManager @Inject constructor() {
             }
 
             2L -> {
-                navigate(
+                /*navigate(
                     NavInfo(id = NavigationRoute.ADD)
-                )
+                )*/
             }
 
             3L -> {
