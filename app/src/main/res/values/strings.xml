@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">Flirtify</string>
+    <string name="app_name">Friendzy</string>
+    
+    <string name="let_meeting_new_peoples">Let\'s  meeting new \npeoples around you</string>
+    <string name="login_with_google">Login with Google</string>
+    <string name="teams_and_conditions">Teams and Conditions</string>
+    <string name="default_web_client_id">1060034547214-md4fbl9g6gprecpv48vhtvc3cnvpg6h9.apps.googleusercontent.com</string>
+    "
 </resources>

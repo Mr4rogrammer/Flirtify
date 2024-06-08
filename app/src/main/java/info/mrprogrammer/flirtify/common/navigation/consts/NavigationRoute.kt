@@ -6,6 +6,6 @@ object NavigationRoute {
     var DASHBOARD: String = "dashboard"
     var DISCOVERY: String = "discovery"
     var MATCHES: String = "matches"
-    var MATCHES_DETAILS: String = "matches_details"
+    var ADD: String = "add"
     var MESSAGE: String = "Messages"
 }

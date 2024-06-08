@@ -13,13 +13,15 @@ import androidx.compose.ui.platform.LocalContext
 private val DarkColorScheme = darkColorScheme(
     primary = primary,
     secondary = secondary,
-    tertiary = tertiary
+    tertiary = tertiary,
+    background = background
 )
 
 private val LightColorScheme = lightColorScheme(
     primary = primary,
     secondary = secondary,
-    tertiary = tertiary
+    tertiary = tertiary,
+    background = background
 )
 
 @Composable
@@ -29,11 +31,10 @@ fun FlirtifyTheme(
     content: @Composable () -> Unit
 ) {
     val colorScheme = when {
-        dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
+       /* dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
             val context = LocalContext.current
             if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
-        }
-
+        }*/
         darkTheme -> DarkColorScheme
         else -> LightColorScheme
     }

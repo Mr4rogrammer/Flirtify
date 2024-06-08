@@ -3,7 +3,7 @@ plugins {
     alias(libs.plugins.android.application)
     id("kotlin-kapt")
     id("com.google.dagger.hilt.android")
-   // alias(libs.plugins.google.gms.google.services)
+    alias(libs.plugins.google.gms.google.services)
 }
 
 android {
@@ -21,6 +21,7 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+        multiDexEnabled = true
     }
 
     buildTypes {
@@ -43,7 +44,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.1"
+        kotlinCompilerExtensionVersion = "1.5.10"
     }
     packaging {
         resources {
@@ -77,4 +78,9 @@ dependencies {
 
 
     implementation(project(":ui-manager"))
+    //implementation(files("libs/MrUtils.aar"))
+    implementation("com.google.code.gson:gson:2.11.0")
+    implementation("com.google.android.gms:play-services-auth:21.2.0")
+    implementation("androidx.hilt:hilt-navigation-compose:1.0.0-alpha03")
+
 }
