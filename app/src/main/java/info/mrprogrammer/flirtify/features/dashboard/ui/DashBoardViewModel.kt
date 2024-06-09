@@ -31,8 +31,8 @@ class DashBoardViewModel @Inject constructor(
     init {
         viewModelScope.launch {
             initStoryData()
+            initPost()
         }
-        initPost()
     }
 
     fun changeScreen(id: Long) {
@@ -62,7 +62,7 @@ class DashBoardViewModel @Inject constructor(
     }
 
 
-    private fun initPost() {
+    private suspend fun initPost() {
         for (i in 1..15) {
             val data = PostData(
                 postImageUrl = "https://i.pinimg.com/736x/c2/6d/91/c26d912eb43a85ca51ecb81804f36dc4.jpg",
@@ -72,7 +72,7 @@ class DashBoardViewModel @Inject constructor(
                 ),
                 content = "If you could live anywhere in the world, where would you pick?",
                 userData = UserData(
-                    userImageUrl = "https://instagram.fmaa2-4.fna.fbcdn.net/v/t51.2885-19/439900491_657834589820368_6188193405571672090_n.jpg?stp=dst-jpg_s150x150&_nc_ht=instagram.fmaa2-4.fna.fbcdn.net&_nc_cat=104&_nc_ohc=nNB02i6VgX8Q7kNvgGARxmS&edm=AEhyXUkBAAAA&ccb=7-5&oh=00_AYAnuEMpYDvDzsn2JzYCr3wUtuee03-WMvODjeRfqyulfg&oe=666A2974&_nc_sid=cf751b",
+                    userImageUrl = getUserLoginDetails().imageUrl ?: "",
                     userName = "Krishna", userStatusText = "Mr.Programmer"
                 ),
                 reactIcon = info.mrprogrammer.flirtify.R.drawable.like

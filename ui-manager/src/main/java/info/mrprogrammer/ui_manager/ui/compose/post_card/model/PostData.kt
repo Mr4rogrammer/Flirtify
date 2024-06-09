@@ -18,5 +18,5 @@ data class UserData(
     val userEmail: String = "",
     val userName: String = "",
     val userStatusText: String = "",
-    val userImageUrl: String = "",
+    val userImageUrl: Any = "",
 )
