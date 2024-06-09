@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "1060034547214",
+    "firebase_url": "https://flirtify-b0502-default-rtdb.firebaseio.com",
     "project_id": "flirtify-b0502",
     "storage_bucket": "flirtify-b0502.appspot.com"
   },
@@ -19,6 +20,14 @@
           "android_info": {
             "package_name": "info.mrprogrammer.flirtify",
             "certificate_hash": "81c2c9f1955d552eff5d8b42e510ec7c0713e4af"
+          }
+        },
+        {
+          "client_id": "1060034547214-k8j21825s310v461c7u6gnbdm10s014g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "info.mrprogrammer.flirtify",
+            "certificate_hash": "963c75e952a972c52dad185fb0a98c86a4a178e4"
           }
         },
         {

@@ -2,6 +2,7 @@ package info.mrprogrammer.flirtify.features.login.ui
 
 import android.content.Context
 import android.content.Intent
+import android.util.Log
 import android.widget.Toast
 import androidx.activity.compose.ManagedActivityResultLauncher
 import androidx.activity.compose.rememberLauncherForActivityResult
@@ -96,7 +97,8 @@ fun LoginScreen(viewModel: LoginViewModel = hiltViewModel()) {
                 }
         } catch (e: Exception) {
             viewModel.loginFailed()
-            Toast.makeText(context, "Login Failed", Toast.LENGTH_SHORT).show()
+            Log.e("LoginScreen", "signInWithGoogle: $e")
+            Toast.makeText(context, "Login Failed $e", Toast.LENGTH_SHORT).show()
         }
     }
 
