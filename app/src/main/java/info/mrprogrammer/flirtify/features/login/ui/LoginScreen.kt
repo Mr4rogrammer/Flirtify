@@ -48,7 +48,7 @@ import info.mrprogrammer.flirtify.R
 import info.mrprogrammer.flirtify.core.domain.model.SaveDataModel
 import info.mrprogrammer.flirtify.features.login.ui.state.LoginState
 import info.mrprogrammer.flirtify.features.login.ui.viewmodel.LoginViewModel
-import info.mrprogrammer.ui_manager.ui.compose.lotfiles.AnimatedPreloader
+import info.mrprogrammer.ui_manager.ui.compose.lotfiles.LotifilesAnimatedPreloader
 
 @Composable
 fun LoginScreen(viewModel: LoginViewModel = hiltViewModel()) {
@@ -165,7 +165,7 @@ fun LoginScreen(viewModel: LoginViewModel = hiltViewModel()) {
         }
 
         if (loginState == LoginState.LoginStarted) {
-            AnimatedPreloader(
+            LotifilesAnimatedPreloader(
                 modifier = Modifier
                     .align(Alignment.Center)
                     .fillMaxWidth()

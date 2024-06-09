@@ -8,4 +8,5 @@ object NavigationRoute {
     var MATCHES: String = "matches"
     var ADD: String = "add"
     var MESSAGE: String = "Messages"
+    var PERMISSION:String  = "Permission"
 }

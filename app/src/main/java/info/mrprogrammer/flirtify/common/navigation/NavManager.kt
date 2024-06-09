@@ -17,39 +17,38 @@ class NavManager @Inject constructor() {
         _routeInfo.update { routeInfo ?: NavInfo() }
     }
 
-    fun navigate(id: Long) {
-        when (id) {
+    fun navigate(id: Long, popBackUp:Boolean = false) {
+       val navInfo =  when (id) {
             0L -> {
-                navigate(
-                    NavInfo(id = NavigationRoute.DASHBOARD)
-                )
+                NavInfo(id = NavigationRoute.DASHBOARD)
             }
 
             1L -> {
-                navigate(
-                    NavInfo(id = NavigationRoute.DISCOVERY)
-                )
+                NavInfo(id = NavigationRoute.DISCOVERY)
             }
 
             2L -> {
-                /*navigate(
-                    NavInfo(id = NavigationRoute.ADD)
-                )*/
+                NavInfo(id = NavigationRoute.ADD)
             }
 
             3L -> {
-                navigate(
-                    NavInfo(id = NavigationRoute.MATCHES)
-                )
+                NavInfo(id = NavigationRoute.MATCHES)
             }
 
             4L -> {
-                navigate(
-                    NavInfo(id = NavigationRoute.MESSAGE)
-                )
+                NavInfo(id = NavigationRoute.MESSAGE)
             }
-        }
+
+           else -> {
+               NavInfo(id = NavigationRoute.DASHBOARD)
+           }
+       }
+       if (popBackUp) {
+           navInfo.navOption = NavOptions.Builder().setPopUpTo(
+               NavigationRoute.LOGIN, inclusive = true).build()
+       }
+        navigate(navInfo)
     }
 }
 
-data class NavInfo(val id: String? = null, val navOption: NavOptions? = null)
+data class NavInfo(val id: String? = null, var navOption: NavOptions? = null)

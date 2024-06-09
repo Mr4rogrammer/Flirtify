@@ -5,6 +5,7 @@ import android.net.ConnectivityManager
 import android.net.NetworkInfo
 import android.os.SystemClock
 import android.view.View
+import info.mrprogrammer.ui_manager.ui.compose.instagram.model.PostOption
 import kotlin.random.Random
 
 fun View.setDebouncedOnClickListener(interval: Long = 2000L, onClick: (View) -> Unit) {
@@ -53,7 +54,6 @@ fun getRandomUrlGirlImage(): String {
     val randomIndex = Random.nextInt(urls.size)
     return urls[randomIndex]
 }
-
 fun getRandomGirlName(): String {
     val girlNames = listOf(
         "Sophia", "Emma", "Olivia", "Ava", "Isabella",

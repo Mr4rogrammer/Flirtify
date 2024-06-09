@@ -18,7 +18,7 @@ fun getBottomNavigationDetails(): List<BottomNavigationBarDataModel> {
         ),
         BottomNavigationBarDataModel(
             id = 2,
-            activeIcon = R.drawable.add,
+            activeIcon = R.drawable.add_active,
             inActiveIcon = R.drawable.add,
         ),
         BottomNavigationBarDataModel(
