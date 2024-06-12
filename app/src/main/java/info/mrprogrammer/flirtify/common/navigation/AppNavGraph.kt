@@ -11,11 +11,11 @@ import info.mrprogrammer.ui_manager.ui.compose.permission.utils.getPermissionLis
 import info.mrprogrammer.ui_manager.ui.compose.permission.utils.isAllPermissionGranter
 import info.mrprogrammer.flirtify.common.navigation.consts.NavigationRoute
 import info.mrprogrammer.flirtify.features.add.ui.screen.AddPostScreen
-import info.mrprogrammer.flirtify.features.dashboard.ui.DashBoardScreen
-import info.mrprogrammer.flirtify.features.discovery.ui.DiscoveryScreen
-import info.mrprogrammer.flirtify.features.login.ui.LoginScreen
-import info.mrprogrammer.flirtify.features.matches.ui.MatcheScreen
-import info.mrprogrammer.flirtify.features.messages.ui.MessageScreen
+import info.mrprogrammer.flirtify.features.dashboard.ui.screen.DashBoardScreen
+import info.mrprogrammer.flirtify.features.discovery.ui.screen.DiscoveryScreen
+import info.mrprogrammer.flirtify.features.login.ui.screen.LoginScreen
+import info.mrprogrammer.flirtify.features.matches.ui.screen.MatcheScreen
+import info.mrprogrammer.flirtify.features.messages.ui.screen.MessageScreen
 import info.mrprogrammer.flirtify.features.splash.SplashScreen
 import info.mrprogrammer.ui_manager.ui.animation.FadeInAnimation
 import info.mrprogrammer.ui_manager.ui.compose.permission.PermissionRequestScreen

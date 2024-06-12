@@ -1,4 +1,4 @@
-package info.mrprogrammer.flirtify.features.dashboard.ui
+package info.mrprogrammer.flirtify.features.dashboard.ui.screen
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -28,6 +28,7 @@ import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import info.mrprogrammer.flirtify.R
 import info.mrprogrammer.flirtify.common.bottomNavgation.getBottomNavigationDetails
+import info.mrprogrammer.flirtify.features.dashboard.ui.viewmodel.DashBoardViewModel
 import info.mrprogrammer.ui_manager.ui.compose.navigation.BottomNavigationBar
 import info.mrprogrammer.ui_manager.ui.compose.post_card.PostCard
 import info.mrprogrammer.ui_manager.ui.compose.story_list.StoryList

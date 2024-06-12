@@ -1,4 +1,4 @@
-package info.mrprogrammer.flirtify.features.discovery.ui
+package info.mrprogrammer.flirtify.features.discovery.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel

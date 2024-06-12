@@ -1,4 +1,4 @@
-package info.mrprogrammer.flirtify.features.login.ui
+package info.mrprogrammer.flirtify.features.login.ui.screen
 
 import android.content.Context
 import android.content.Intent

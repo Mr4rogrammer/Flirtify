@@ -1,4 +1,4 @@
-package info.mrprogrammer.flirtify.features.messages.ui
+package info.mrprogrammer.flirtify.features.messages.ui.screen
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -26,6 +26,7 @@ import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import info.mrprogrammer.flirtify.R
 import info.mrprogrammer.flirtify.common.bottomNavgation.getBottomNavigationDetails
+import info.mrprogrammer.flirtify.features.messages.ui.viewmodel.MessageViewModel
 import info.mrprogrammer.ui_manager.ui.compose.chat.ChatList
 import info.mrprogrammer.ui_manager.ui.compose.navigation.BottomNavigationBar
 

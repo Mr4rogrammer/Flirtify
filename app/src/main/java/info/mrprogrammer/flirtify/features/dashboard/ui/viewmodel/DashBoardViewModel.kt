@@ -1,4 +1,4 @@
-package info.mrprogrammer.flirtify.features.dashboard.ui
+package info.mrprogrammer.flirtify.features.dashboard.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
